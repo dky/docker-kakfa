@@ -14,7 +14,7 @@ RUN apt-get update && \
     tar xfz /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz -C /opt && \
     rm /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz
 
-ADD start-kafka.sh /usr/local/bin/start-kafka.sh
+ADD entrypoint.sh /usr/local/bin/start-kafka.sh
 
 # Supervisor config
 ADD supervisor/kafka.conf supervisor/zookeeper.conf /etc/supervisor/conf.d/
